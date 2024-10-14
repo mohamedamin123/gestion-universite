@@ -1,10 +1,19 @@
 package org.bibliotheque.universite.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.Node;
+import javafx.stage.Stage;
+import javafx.scene.Parent;
+import javafx.event.ActionEvent;
+import org.bibliotheque.universite.utils.Fenetre;
+
+import java.io.IOException;
 
 public class LoginController {
 
@@ -16,12 +25,9 @@ public class LoginController {
     private Button myButton;
     @FXML
     private Label loginErreur;
-    @FXML
-    private Label welcomeText;
-
 
     @FXML
-    private void connecter() {
+    private void connecter(ActionEvent event) {
         String email = emailConnecter.getText().trim();
         String password = passwordConnecter.getText().trim();
 
@@ -31,6 +37,8 @@ public class LoginController {
         } else {
             if (validateLogin(email, password)) {
                 loginErreur.setVisible(false);
+                // If the login is successful, load the homeEtudiant interface
+                Fenetre.loadHomeEtudiantScene(event,"homeEtudiant");
             } else {
                 loginErreur.setText("Votre email ou mot de passe est incorrect!!");
                 loginErreur.setVisible(true);
@@ -38,9 +46,12 @@ public class LoginController {
         }
     }
 
-    // Example method to validate login (you would replace this with actual authentication logic)
+    // Method to validate login (replace this with your actual logic)
     private boolean validateLogin(String email, String password) {
-        // Replace this with actual validation logic (e.g., check from a database)
-        return email.equals("admin@example.com") && password.equals("password");
+        // Replace with actual validation (e.g., check from database)
+        return email.equals("amin@amin.com") && password.equals("123");
     }
+
+    // Load the homeEtudiant interface after successful login
+
 }
