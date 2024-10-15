@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="880.0" stylesheets="@style/emploi.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bibliotheque.universite.controller.etudiant.EmploiController">
+<AnchorPane prefHeight="600.0" prefWidth="880.0" stylesheets="@style/emploi.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bibliotheque.universite.controller.etudiant.CalendrierController">
 
     <VBox spacing="20" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
         <!-- Titre -->
@@ -15,16 +15,16 @@
         <TableView fx:id="timetableTable" prefHeight="340.0" styleClass="table-view">
             <columns>
                 <TableColumn fx:id="horaireColumn" text="Horaire" />
-                <TableColumn fx:id="lundiColumn" text="Lundi" />
-                <TableColumn fx:id="mardiColumn" text="Mardi" />
-                <TableColumn fx:id="mercrediColumn" text="Mercredi" />
-                <TableColumn fx:id="jeudiColumn" text="Jeudi" />
-                <TableColumn fx:id="vendrediColumn" text="Vendredi" />
-                <TableColumn fx:id="samediColumn" text="Samedi" />
+                <TableColumn fx:id="lundiColumn" text="05/11/2024" />
+                <TableColumn fx:id="mardiColumn" text="06/11/2024" />
+                <TableColumn fx:id="mercrediColumn" text="07/11/2024" />
+                <TableColumn fx:id="jeudiColumn" text="08/11/2024" />
+                <TableColumn fx:id="vendrediColumn" text="09/11/2024" />
+                <TableColumn fx:id="samediColumn" text="10/11/2024" />
             </columns>
-         <columnResizePolicy>
-            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-         </columnResizePolicy>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
         </TableView>
 
         <!-- Bouton Retour -->

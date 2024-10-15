@@ -3,23 +3,23 @@ package org.bibliotheque.universite.model;
 public class Devoir {
 
     private Integer idDevoir;
-    private String titre;
-    private float note;
+    private float noteDS;
+    private float noteExamen;
+
 
 
     public Devoir() {
     }
 
-
-    public Devoir(String titre, float note) {
-        this.titre = titre;
-        this.note = note;
+    public Devoir(float noteDS, float noteExamen) {
+        this.noteDS = noteDS;
+        this.noteExamen = noteExamen;
     }
 
-    public Devoir(Integer idDevoir, String titre, float note) {
+    public Devoir(Integer idDevoir, float noteDS, float noteExamen) {
         this.idDevoir = idDevoir;
-        this.titre = titre;
-        this.note = note;
+        this.noteDS = noteDS;
+        this.noteExamen = noteExamen;
     }
 
     public Integer getIdDevoir() {
@@ -30,28 +30,28 @@ public class Devoir {
         this.idDevoir = idDevoir;
     }
 
-    public String getTitre() {
-        return titre;
+    public float getNoteDS() {
+        return noteDS;
     }
 
-    public void setTitre(String titre) {
-        this.titre = titre;
+    public void setNoteDS(float noteDS) {
+        this.noteDS = noteDS;
     }
 
-    public float getNote() {
-        return note;
+    public float getNoteExamen() {
+        return noteExamen;
     }
 
-    public void setNote(float note) {
-        this.note = note;
+    public void setNoteExamen(float noteExamen) {
+        this.noteExamen = noteExamen;
     }
 
     @Override
     public String toString() {
         return "Devoir{" +
                 "idDevoir=" + idDevoir +
-                ", titre='" + titre + '\'' +
-                ", note=" + note +
+                ", noteDS='" + noteDS + '\'' +
+                ", noteExamen=" + noteExamen +
                 '}';
     }
 }

@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane alignment="CENTER" hgap="15" prefHeight="614.0" prefWidth="651.0" styleClass="container" stylesheets="@style/profile.css" vgap="15" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bibliotheque.universite.controller.ProfileController">
+<GridPane alignment="CENTER" hgap="15" prefHeight="614.0" prefWidth="651.0" styleClass="container" stylesheets="@style/profile.css" vgap="15" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bibliotheque.universite.controller.etudiant.ProfileController">
 
     <!-- Profile Image -->
     <ImageView fitHeight="130" fitWidth="130" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">

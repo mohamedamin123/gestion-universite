@@ -1,4 +1,4 @@
-package org.bibliotheque.universite.controller;
+package org.bibliotheque.universite.controller.etudiant;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

@@ -1,4 +1,4 @@
-package org.bibliotheque.universite.controller;
+package org.bibliotheque.universite.controller.etudiant;
 
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -47,9 +47,11 @@ public class HomeEtudiantController {
 
         calendrier.setOnMouseClicked(e->{
             System.out.println("calendrier");
+            Fenetre.loadHomeEtudiantScene(e,"calendrier");
         });
         note.setOnMouseClicked(e->{
             System.out.println("note");
+            Fenetre.loadHomeEtudiantScene(e,"note");
         });
         deconnecter.setOnMouseClicked(e->{
             System.exit(0);

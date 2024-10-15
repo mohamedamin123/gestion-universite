@@ -13,7 +13,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.PasswordField?>
 <VBox alignment="CENTER" prefHeight="600.0" prefWidth="800.0" spacing="40.0" stylesheets="@style/login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="org.bibliotheque.universite.controller.LoginController">
+      fx:controller="org.bibliotheque.universite.controller.etudiant.LoginController">
 
   <!-- Titre -->
   <Label  styleClass="title-label" text="Connecter" VBox.vgrow="NEVER"/>

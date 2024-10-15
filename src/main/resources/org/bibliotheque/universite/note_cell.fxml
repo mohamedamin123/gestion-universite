@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.image.Image?>
+<HBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@style/matiere.css">
+    <ImageView fx:id="matiereIcon" fitHeight="50" fitWidth="50">
+        <Image url="@images/cour.png" />
+
+    </ImageView>
+    <VBox>
+        <Label fx:id="matiereName" styleClass="matiere-name" />
+        <Label fx:id="noteDS" styleClass="matiere-details" />
+        <Label fx:id="noteExamen" styleClass="matiere-details" />
+    </VBox>
+</HBox>

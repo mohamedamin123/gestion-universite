@@ -11,6 +11,8 @@ module org.bibliotheque.universite {
 
     opens org.bibliotheque.universite to javafx.fxml;
     exports org.bibliotheque.universite;
-    exports org.bibliotheque.universite.controller;
-    opens org.bibliotheque.universite.controller to javafx.fxml;
+    exports org.bibliotheque.universite.controller.enseignant;
+    opens org.bibliotheque.universite.controller.enseignant to javafx.fxml;
+    exports org.bibliotheque.universite.controller.etudiant;
+    opens org.bibliotheque.universite.controller.etudiant to javafx.fxml;
 }
