@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" hgap="15" prefHeight="614.0" prefWidth="651.0" styleClass="container" stylesheets="@style/profile.css" vgap="15" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.bibliotheque.universite.controller.ProfileController">
+
+    <!-- Profile Image -->
+    <ImageView fitHeight="130" fitWidth="130" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
+        <Image url="@images/profile.png" />
+    </ImageView>
+
+    <!-- Nom Field -->
+    <Label text="Nom :" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="nom" editable="false" promptText="Nom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <!-- Prenom Field -->
+    <Label text="Prenom :" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="prenom" editable="false" promptText="Prenom" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <!-- Email Field -->
+    <Label text="Email :" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <TextField fx:id="email" editable="false" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <!-- Tel Field -->
+    <Label text="Telephone :" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <TextField fx:id="tel" editable="false" promptText="Tel" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <!-- Date de Naissance Field -->
+    <Label text="Date de Naissance :" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <DatePicker fx:id="dateDeNaissance" editable="false" promptText="Date de naissance" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+    <Label fx:id="classl" text="Class:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+    <TextField fx:id="classs" editable="false" promptText="Class" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+    <Label fx:id="classError" styleClass="erreur" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+    <Label fx:id="specialiteL" text="Specialite:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+    <TextField fx:id="specialite" editable="false" promptText="Specialite" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+
+    <!-- Buttons for Actions -->
+    <HBox alignment="CENTER" spacing="10" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="8">
+        <Button fx:id="retour" styleClass="buttonAnnuler" text="Retour" />
+    </HBox>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+    </rowConstraints>
+
+</GridPane>

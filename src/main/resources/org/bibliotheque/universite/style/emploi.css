@@ -1,0 +1,39 @@
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+    -fx-alignment: center;
+}
+
+.table-view {
+    -fx-font-size: 14px;
+    -fx-selection-bar-color: #007BFF; /* Change selection color */
+}
+
+.table-view .column-header {
+    -fx-background-color: #f0f0f0; /* Header background */
+    -fx-font-weight: bold;
+    -fx-text-fill: #000;
+}
+
+.table-view .table-row {
+    -fx-padding: 10px; /* Adjust row padding */
+}
+
+.table-view .table-row-cell {
+    -fx-min-height: 60px; /* Adjust row height */
+}
+
+
+.retour-button {
+    -fx-background-color: #dc3545;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-border-radius: 4px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 5, 0, 0, 1);
+}

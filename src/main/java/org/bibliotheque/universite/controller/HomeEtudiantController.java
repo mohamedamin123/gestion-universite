@@ -31,6 +31,8 @@ public class HomeEtudiantController {
 
         emploi.setOnMouseClicked(e->{
             System.out.println("emploi");
+            Fenetre.loadHomeEtudiantScene(e,"emploi");
+
         });
 
         cours.setOnMouseClicked(e->{
@@ -40,6 +42,7 @@ public class HomeEtudiantController {
 
         profile.setOnMouseClicked(e->{
             System.out.println("profile");
+            Fenetre.loadHomeEtudiantScene(e,"profile");
         });
 
         calendrier.setOnMouseClicked(e->{
