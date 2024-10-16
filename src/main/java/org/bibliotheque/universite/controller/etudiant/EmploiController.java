@@ -1,5 +1,6 @@
 package org.bibliotheque.universite.controller.etudiant;
 
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,56 +8,77 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import org.bibliotheque.universite.model.Emploi;
+import org.bibliotheque.universite.model.Matiere;
+import org.bibliotheque.universite.model.Salle;
 import org.bibliotheque.universite.utils.Fenetre;
 import org.bibliotheque.universite.utils.TimetableEntry;
 
+import java.time.LocalTime;
+
 public class EmploiController {
     @FXML
-    private TableView<TimetableEntry> timetableTable;
+    private TableView<Emploi> timetableTable;
     @FXML
-    private TableColumn<TimetableEntry, String> horaireColumn;
+    private TableColumn<Emploi, String> horaireColumn;
     @FXML
-    private TableColumn<TimetableEntry, String> lundiColumn;
+    private TableColumn<Emploi, String> lundiColumn;
     @FXML
-    private TableColumn<TimetableEntry, String> mardiColumn;
+    private TableColumn<Emploi, String> mardiColumn;
     @FXML
-    private TableColumn<TimetableEntry, String> mercrediColumn;
+    private TableColumn<Emploi, String> mercrediColumn;
     @FXML
-    private TableColumn<TimetableEntry, String> jeudiColumn;
+    private TableColumn<Emploi, String> jeudiColumn;
     @FXML
-    private TableColumn<TimetableEntry, String> vendrediColumn;
+    private TableColumn<Emploi, String> vendrediColumn;
     @FXML
-    private TableColumn<TimetableEntry, String> samediColumn;
+    private TableColumn<Emploi, String> samediColumn;
     @FXML
     private Button retour;
-    @FXML
-    private TableColumn<TimetableEntry, String> sujetSalleColumn; // New column for sujet and salle
-    private ObservableList<TimetableEntry> timetableEntries;
+    private ObservableList<Emploi> emplois;
+
 
     @FXML
     public void initialize() {
         timetableTable.setFixedCellSize(60); // Ajustez cette valeur si nécessaire
 
-        timetableEntries = FXCollections.observableArrayList(
-                new TimetableEntry("08:30 - 10:00", "Mathématiques\n Salle A\n TP", "Physique\n Salle B\n TP", "Chimie\n Salle C\n TP", "Informatique\n Salle D", "Économie\n Salle E\n Cour", ""),
-                new TimetableEntry("10:15 - 11:45", "Histoire\n Salle F\n TP", "Mathématiques\n Salle G\n TP", "Chimie\n Salle H\n Cour", "Anglais\n Salle I", "Informatique\n Salle J\n Cour", ""),
-                new TimetableEntry("12:00 - 13:30", "", "", "", "", "", ""),
-                new TimetableEntry("13:45 - 15:15", "Informatique\n Salle K\n TP", "Économie\n Salle L\n TP", "Histoire\n Salle M\n TP", "Mathématiques\n Salle N", "Chimie\n Salle O\n Cour", ""),
-                new TimetableEntry("15:15 - 17:00", "Anglais\n Salle P\n Cour", "Chimie\n Salle Q\n TP", "Mathématiques\n Salle R\n TP", "Informatique\n Salle S", "", "")
+        getData();
+
+        horaireColumn.setCellValueFactory(cellData ->
+                new SimpleObjectProperty<>(cellData.getValue().getTimeDebut()+" "+cellData.getValue().getTimeFin() )
+        );
+        lundiColumn.setCellValueFactory(cellData ->
+                new SimpleObjectProperty<>("Math \n Salle A \n TP")
+        );
+        mardiColumn.setCellValueFactory(cellData ->
+                new SimpleObjectProperty<>("Phys \n Salle A \n TP")
+        );
+        mercrediColumn.setCellValueFactory(cellData ->
+                new SimpleObjectProperty<>("anglais \n Salle A \n TP")
+        );
+        jeudiColumn.setCellValueFactory(cellData ->
+                new SimpleObjectProperty<>("francais \n Salle A \n TP")
+        );
+        vendrediColumn.setCellValueFactory(cellData ->
+                new SimpleObjectProperty<>("Informatique \n Salle A \n TP")
         );
 
-        horaireColumn.setCellValueFactory(cellData -> cellData.getValue().horaireProperty());
-        lundiColumn.setCellValueFactory(cellData -> cellData.getValue().lundiProperty());
-        mardiColumn.setCellValueFactory(cellData -> cellData.getValue().mardiProperty());
-        mercrediColumn.setCellValueFactory(cellData -> cellData.getValue().mercrediProperty());
-        jeudiColumn.setCellValueFactory(cellData -> cellData.getValue().jeudiProperty());
-        vendrediColumn.setCellValueFactory(cellData -> cellData.getValue().vendrediProperty());
-        samediColumn.setCellValueFactory(cellData -> cellData.getValue().samediProperty());
 
-        timetableTable.setItems(timetableEntries);
+        timetableTable.setItems(emplois);
 
         retour.setOnAction(e -> {
             Fenetre.loadHomeEtudiantScene(e, "homeEtudiant");
         });
+    }
+
+    private void getData() {
+        emplois = FXCollections.observableArrayList(
+                new Emploi(1, "Lundi", LocalTime.of(8, 30), LocalTime.of(10, 0),5, 3),
+                new Emploi(3, "Mardi", LocalTime.of(10, 15), LocalTime.of(11, 45),2,1),
+                new Emploi(2, "Mercredi", LocalTime.of(12, 0), LocalTime.of(13, 30), 9,8),
+                new Emploi(4, "Jeudi", LocalTime.of(13, 45), LocalTime.of(15, 15),7,1),
+                new Emploi(5, "Vendredi", LocalTime.of(15, 30), LocalTime.of(17, 0),7,1)
+        );
+
     }
 }
